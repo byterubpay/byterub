@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The ByteRub Project
 // 
 // All rights reserved.
 // 
@@ -58,8 +58,8 @@
 #include "cryptonote_basic/cryptonote_boost_serialization.h"
 #include "misc_language.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "tests.core"
+#undef BYTERUB_DEFAULT_LOG_CATEGORY
+#define BYTERUB_DEFAULT_LOG_CATEGORY "tests.core"
 
 
 

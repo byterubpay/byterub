@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The Monero Project
+# Copyright (c) 2014-2019, The ByteRub Project
 # 
 # All rights reserved.
 # 
@@ -74,8 +74,8 @@ file(COPY
   data/wallet_9svHk1.keys
   data/wallet_9svHk1
   data/outputs
-  data/unsigned_monero_tx
-  data/signed_monero_tx
+  data/unsigned_byterub_tx
+  data/signed_byterub_tx
   DESTINATION data)
 
 add_subdirectory(core_tests)

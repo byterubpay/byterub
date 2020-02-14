@@ -1,0 +1,36 @@
+[Unit]
+Description=ByteRub Full Node
+After=network.target
+
+[Service]
+User=byterub
+Group=byterub
+WorkingDirectory=~
+RuntimeDirectory=byterub
+
+# Clearnet config
+#
+Type=forking
+PIDFile=/run/byterub/byterubd.pid
+ExecStart=/usr/bin/byterubd --config-file /etc/byterubd.conf \
+    --detach --pidfile /run/byterub/byterubd.pid
+
+# Tor config
+#
+## We have to use simple, not forking, because we cannot pass --detach
+## because stderr/stdout is not available when detached, but torsocks
+## attempts to write to it, and fails with 'invalid argument', causing
+## byterubd to fail.
+#Type=simple
+#Environment=DNS_PUBLIC=tcp
+## The following is needed only when accessing wallet from a different
+## host in the LAN, VPN, etc, the RPC must bind to 0.0.0.0, but
+## by default torsocks only allows binding to localhost.
+#Environment=TORSOCKS_ALLOW_INBOUND=1
+#ExecStart=/usr/bin/torsocks /usr/bin/byterubd --config-file /etc/byterubd.conf \
+#    --non-interactive
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

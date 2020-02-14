@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The ByteRub Project
 //
 // All rights reserved.
 //
@@ -43,7 +43,7 @@
 
 using namespace std;
 
-namespace Monero {
+namespace ByteRub {
 
 PendingTransaction::~PendingTransaction() {}
 
@@ -264,5 +264,5 @@ std::vector<std::string> PendingTransactionImpl::signersKeys() const {
 
 }
 
-namespace Bitmonero = Monero;
+namespace Bitbyterub = ByteRub;
 

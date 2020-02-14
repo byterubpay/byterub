@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The ByteRub Project
 //
 // All rights reserved.
 //
@@ -291,10 +291,10 @@ namespace nodetool
 
   private:
     const std::vector<std::string> m_seed_nodes_list =
-    { "seeds.moneroseeds.se"
-    , "seeds.moneroseeds.ae.org"
-    , "seeds.moneroseeds.ch"
-    , "seeds.moneroseeds.li"
+    { "seeds.byterubseeds.se"
+    , "seeds.byterubseeds.ae.org"
+    , "seeds.byterubseeds.ch"
+    , "seeds.byterubseeds.li"
     };
 
     bool islimitup=false;

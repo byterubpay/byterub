@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The Monero Project
+# Copyright (c) 2014-2019, The ByteRub Project
 #
 # All rights reserved.
 #
@@ -80,9 +80,9 @@ set(crypto_private_headers
   CryptonightR_JIT.h
   CryptonightR_template.h)
 
-monero_private_headers(cncrypto
+byterub_private_headers(cncrypto
   ${crypto_private_headers})
-monero_add_library(cncrypto
+byterub_add_library(cncrypto
   ${crypto_sources}
   ${crypto_headers}
   ${crypto_private_headers})

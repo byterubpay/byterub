@@ -1,31 +1,31 @@
-name: monero
+name: byterub
 version: 0.11.1.0-1
-summary: "Monero: the secure, private, untraceable cryptocurrency https://getmonero.org"
+summary: "ByteRub: the secure, private, untraceable cryptocurrency https://getbyterub.org"
 description: |
-    Monero is a private, secure, untraceable, decentralised digital currency.
+    ByteRub is a private, secure, untraceable, decentralised digital currency.
     You are your bank, you control your funds, and nobody can trace your transfers
     unless you allow them to do so.
 grade: devel
 confinement: strict
 
 apps:
-    monerod:
+    byterubd:
         daemon: forking
         command: |
-          monerod-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/monerod.conf
+          byterubd-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/byterubd.conf
         plugs:
             - network
             - network-bind
-    monero-wallet-rpc:
+    byterub-wallet-rpc:
         command: |
-          monero-wallet-rpc --log-file ${SNAP_USER_DATA}
+          byterub-wallet-rpc --log-file ${SNAP_USER_DATA}
         plugs:
             - home
             - network
             - network-bind
-    monero-wallet-cli:
+    byterub-wallet-cli:
         command: |
-          monero-wallet-cli --log-file ${SNAP_USER_DATA}
+          byterub-wallet-cli --log-file ${SNAP_USER_DATA}
         plugs:
             - home
             - network
@@ -71,8 +71,8 @@ parts:
         plugin: dump
         source: .
         organize:
-            contrib/snap/monerod.conf: etc/monerod.conf
-            contrib/snap/monerod-wrapper: bin/monerod-wrapper
+            contrib/snap/byterubd.conf: etc/byterubd.conf
+            contrib/snap/byterubd-wrapper: bin/byterubd-wrapper
         prime:
             - etc
             - bin
