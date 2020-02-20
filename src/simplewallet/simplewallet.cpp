@@ -2617,7 +2617,7 @@ bool simple_wallet::set_unit(const std::vector<std::string> &args/* = std::vecto
     decimal_point = CRYPTONOTE_DISPLAY_DECIMAL_POINT;
   else if (unit == "millinero")
     decimal_point = CRYPTONOTE_DISPLAY_DECIMAL_POINT - 3;
-  else if (unit == "micronero")
+  else if (unit == "microrub")
     decimal_point = CRYPTONOTE_DISPLAY_DECIMAL_POINT - 6;
   else if (unit == "nanonero")
     decimal_point = CRYPTONOTE_DISPLAY_DECIMAL_POINT - 9;
@@ -3039,11 +3039,11 @@ bool simple_wallet::help(const std::vector<std::string> &args/* = std::vector<st
   message_writer() << tr("Commands:");
   message_writer() << "";
   message_writer() << tr("\"welcome\" - Read welcome message.");
-  message_writer() << tr("\"donate <amount>\" - Donate XMR to the development team.");
+  message_writer() << tr("\"donate <amount>\" - Donate BTR to the development team.");
   message_writer() << tr("\"balance\" - Show balance.");
   message_writer() << tr("\"address new\" - Create new subaddress.");
   message_writer() << tr("\"address all\" - Show all addresses.");
-  message_writer() << tr("\"transfer <address> <amount>\" - Send XMR to an address.");
+  message_writer() << tr("\"transfer <address> <amount>\" - Send BTR to an address.");
   message_writer() << tr("\"show_transfers [in|out|pending|failed|pool]\" - Show transactions.");
   message_writer() << tr("\"sweep_all <address>\" - Send whole balance to another wallet.");
   message_writer() << tr("\"seed\" - Show secret 25 words that can be used to recover this wallet.");
@@ -3232,7 +3232,7 @@ simple_wallet::simple_wallet()
                                   "ask-password <0|1|2   (or never|action|decrypt)>\n "
                                   "  action: ask the password before many actions such as transfer, etc\n "
                                   "  decrypt: same as action, but keeps the spend key encrypted in memory when not needed\n "
-                                  "unit <byterub|millinero|micronero|nanonero|piconero>\n "
+                                  "unit <byterub|millinero|microrub|nanonero|piconero>\n "
                                   "  Set the default byterub (sub-)unit.\n "
                                   "min-outputs-count [n]\n "
                                   "  Try to keep at least that many outputs of value at least min-outputs-value.\n "
@@ -3722,7 +3722,7 @@ bool simple_wallet::set_variable(const std::vector<std::string> &args)
     CHECK_SIMPLE_VARIABLE("refresh-type", set_refresh_type, tr("full (slowest, no assumptions); optimize-coinbase (fast, assumes the whole coinbase is paid to a single address); no-coinbase (fastest, assumes we receive no coinbase transaction), default (same as optimize-coinbase)"));
     CHECK_SIMPLE_VARIABLE("priority", set_default_priority, tr("0, 1, 2, 3, or 4, or one of ") << join_priority_strings(", "));
     CHECK_SIMPLE_VARIABLE("ask-password", set_ask_password, tr("0|1|2 (or never|action|decrypt)"));
-    CHECK_SIMPLE_VARIABLE("unit", set_unit, tr("byterub, millinero, micronero, nanonero, piconero"));
+    CHECK_SIMPLE_VARIABLE("unit", set_unit, tr("byterub, millinero, microrub, nanonero, piconero"));
     CHECK_SIMPLE_VARIABLE("min-outputs-count", set_min_output_count, tr("unsigned integer"));
     CHECK_SIMPLE_VARIABLE("min-outputs-value", set_min_output_value, tr("amount"));
     CHECK_SIMPLE_VARIABLE("merge-destinations", set_merge_destinations, tr("0 or 1"));
