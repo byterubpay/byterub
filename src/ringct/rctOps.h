@@ -110,7 +110,7 @@ namespace rct {
     // make a pedersen commitment with zero key
     key zeroCommit(btr_amount amount);
     //generates a random uint long long
-    btr_amount randXmrAmount(btr_amount upperlimit);
+    btr_amount randBtrAmount(btr_amount upperlimit);
 
     //Scalar multiplications of curve points        
 
