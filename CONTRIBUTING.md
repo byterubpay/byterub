@@ -5,7 +5,6 @@ A good way to help is to test, and report bugs. See
 if you want to help that way. Testing is invaluable in making a piece
 of software solid and usable.
 
-
 ## General guidelines
 
 * Comments are encouraged.
